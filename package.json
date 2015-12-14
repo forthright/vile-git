@@ -1,6 +1,6 @@
 {
   "name": "@brentlintner/vile-git",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A vile plugin for git",
   "license": "MPL-2.0",
   "main": "lib/index.js",
