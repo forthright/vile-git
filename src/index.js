@@ -7,7 +7,7 @@ let vile_issues = (commit, branch) => {
   let committer = commit.committer()
   let author = commit.author()
 
-  return [
+  let issues = [
     vile.issue(
       vile.GIT,
       "vile-git", // HACK TODO
@@ -27,6 +27,8 @@ let vile_issues = (commit, branch) => {
       }
     )
   ]
+
+  return issues
 }
 
 let open_repo = (config) =>

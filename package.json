@@ -4,8 +4,12 @@
   "description": "A vile plugin for git",
   "license": "MPL-2.0",
   "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "postinstall": "npm run compile",
     "dev": "bin/dev",
     "compile": "bin/compile",
     "test": "bin/test",
@@ -14,20 +18,22 @@
   },
   "dependencies": {
     "@brentlintner/vile": "~0.3.0",
-    "babel": "~5.8.23",
     "bluebird": "~2.9.34",
     "lodash": "~3.10.1",
     "nodegit": "0.5.0"
   },
   "devDependencies": {
+    "babel": "~5.8.34",
     "chai": "~3.2.0",
     "chai-as-promised": "~5.1.0",
     "coffee-script": "1.10.0",
     "istanbul": "~0.3.19",
     "mimus": "~0.1.2",
     "mocha": "~2.3.0",
+    "npm-check-updates": "~2.5.4",
     "police": "~0.4.0",
     "pryjs": "~0.1.1",
+    "release-it": "~2.3.1",
     "sinon": "~1.16.1",
     "sinon-chai": "~2.8.0"
   }
