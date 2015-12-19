@@ -1,11 +1,11 @@
 let Promise = require("bluebird")
 let _ = require("lodash")
-let git = require("nodegit")
+let git = require("gift")
 let vile = require("@brentlintner/vile")
 
 let vile_issues = (commit, branch) => {
-  let committer = commit.committer()
-  let author = commit.author()
+  let committer = _.get(commit, "committer", {})
+  let author = _.get(commit, "author", {})
 
   let issues = [
     vile.issue(
@@ -15,14 +15,13 @@ let vile_issues = (commit, branch) => {
       undefined,
       undefined, {
         commit: {
-          sha: commit.sha(),
+          sha: commit.id,
           branch: branch,
-          message: commit.message(),
-          committer: `${committer.name()} <${committer.email()}>`,
-          commit_date: commit.date(),
-          author: `${author.name()} <${author.email()}>`,
-          // TODO: get author date
-          author_date: commit.date()
+          message: commit.message,
+          committer: `${committer.name} <${committer.email}>`,
+          commit_date: commit.committed_date,
+          author: `${author.name} <${author.email}>`,
+          author_date: commit.authored_date
         }
       }
     )
@@ -32,24 +31,25 @@ let vile_issues = (commit, branch) => {
 }
 
 let open_repo = (config) =>
-  git.Repository.open(_.get(config, "config.repo", process.cwd()))
+  new Promise((resolve, reject) => {
+    let repo_path = _.get(config, "config.repo", process.cwd())
+    resolve(git(repo_path))
+  })
 
-let get_latest_current_branch_commit = (repo) =>
-  repo
-    .getCurrentBranch()
-    .then((ref) =>
-      repo
-        .getBranchCommit(ref)
-        .then((commit) => [commit, ref])
-    )
+let get_head = (repo) =>
+  new Promise((resolve, reject) => {
+    repo.branch((err, head) => {
+      if (err) reject(err)
+      else resolve(head)
+    })
+  })
 
 let punish = (config) =>
   new Promise((resolve, reject) =>
     open_repo(config)
-      .then(get_latest_current_branch_commit)
-      .then((results) => {
-        let [commit, ref] = results
-        let issues = vile_issues(commit, ref.shorthand())
+      .then(get_head)
+      .then((head={}) => {
+        let issues = vile_issues(head.commit, head.name)
         resolve(issues)
       })
   )

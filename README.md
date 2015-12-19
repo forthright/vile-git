@@ -19,6 +19,16 @@ such as:
 
     npm i vile-git
 
+## Config
+
+You can specify a custom repo location, else the `cwd` is used.
+
+```yaml
+git:
+  config:
+    repo: ../some/path
+```
+
 ## Licensing
 
 This project is licensed under the [MPL](https://www.mozilla.org/MPL/2.0) license.
