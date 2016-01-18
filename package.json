@@ -17,7 +17,7 @@
     "update": "ncu -a && npm i"
   },
   "dependencies": {
-    "@brentlintner/vile": "^0.4.1",
+    "@brentlintner/vile": "^0.5.2",
     "bluebird": "~3.1.1",
     "gift": "^0.7.0",
     "lodash": "~3.10.1"

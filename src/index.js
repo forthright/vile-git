@@ -8,23 +8,19 @@ let vile_issues = (commit, branch) => {
   let author = _.get(commit, "author", {})
 
   let issues = [
-    vile.issue(
-      vile.GIT,
-      "vile-git", // HACK TODO
-      undefined,
-      undefined,
-      undefined, {
-        commit: {
-          sha: commit.id,
-          branch: branch,
-          message: commit.message,
-          committer: `${committer.name} <${committer.email}>`,
-          commit_date: commit.committed_date,
-          author: `${author.name} <${author.email}>`,
-          author_date: commit.authored_date
-        }
+    vile.issue({
+      type: vile.GIT,
+      signature: `git::${branch}-${commit.id}`,
+      commit: {
+        sha: commit.id,
+        branch: branch,
+        message: commit.message,
+        committer: `${committer.name} <${committer.email}>`,
+        commit_date: commit.committed_date,
+        author: `${author.name} <${author.email}>`,
+        author_date: commit.authored_date
       }
-    )
+    })
   ]
 
   return issues
