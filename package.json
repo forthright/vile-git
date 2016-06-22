@@ -14,7 +14,8 @@
     "compile": "bin/compile",
     "test": "bin/test",
     "test-cov": "bin/test-cov",
-    "update": "ncu -a && npm i"
+    "update": "ncu -a && npm i",
+    "vile": "vile p -usi --nodecorations"
   },
   "dependencies": {
     "bluebird": "^3.4.0",
@@ -25,7 +26,7 @@
     "@forthright/vile": ">=0.8.2"
   },
   "devDependencies": {
-    "@forthright/vile": ">=0.8.2",
+    "@forthright/vile": ">= 0.9.1",
     "babel-cli": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "chai": "~3.5.0",
