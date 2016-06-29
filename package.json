@@ -1,6 +1,6 @@
 {
   "name": "@forthright/vile-git",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A vile plugin for git",
   "license": "MPL-2.0",
   "main": "lib/index.js",
@@ -15,6 +15,7 @@
     "test": "bin/test",
     "test-cov": "bin/test-cov",
     "update": "ncu -a && npm i",
+    "release-it": "release-it",
     "vile": "vile p -usi --nodecorations"
   },
   "dependencies": {
