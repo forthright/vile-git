@@ -35,6 +35,16 @@ If you are using [CircleCI](https://circleci.com), you can run:
 
     git checkout -f $CIRCLE_BRANCH
 
+## Analyzing Shallow Clones
+
+If you are having further issues, you can do this in `circle.yml`:
+
+```yaml
+  checkout:
+    post:
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+```
+
 ## Config
 
 You can specify a custom repo location, else the `cwd` is used.
