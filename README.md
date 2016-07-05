@@ -19,6 +19,22 @@ such as:
 
     npm i vile-git
 
+## CI/CD Issues
+
+Since `gift` is the git pkg currently being used, the way a repository is cloned
+(in most cases, via a build server), can cause issues.
+
+For the time being, until a better alternative is used or the bug is fixed upstream,
+you made need to run a git command prior to running vile-git.
+
+For example, on [Codeship](https://codeship.com), you would run:
+
+    git checkout -f $CI_BRANCH
+
+If you are using [CircleCI](https://circleci.com), you can run:
+
+    git checkout -f $CIRCLE_BRANCH
+
 ## Config
 
 You can specify a custom repo location, else the `cwd` is used.
