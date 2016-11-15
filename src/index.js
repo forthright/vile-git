@@ -9,7 +9,7 @@ let vile_issues = (commit, branch) => {
 
   let issues = [
     vile.issue({
-      type: vile.GIT,
+      type: vile.SCM,
       signature: `git::${branch}-${commit.id}`,
       commit: {
         sha: commit.id,
