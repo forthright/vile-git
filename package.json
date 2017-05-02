@@ -1,6 +1,6 @@
 {
   "name": "vile-git",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A vile plugin for git",
   "main": "lib/index.js",
   "files": [
