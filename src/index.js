@@ -1,7 +1,7 @@
 let Promise = require("bluebird")
 let _ = require("lodash")
 let git = require("gift")
-let vile = require("@forthright/vile")
+let vile = require("vile")
 
 let vile_issues = (commit, branch) => {
   let committer = _.get(commit, "committer", {})
