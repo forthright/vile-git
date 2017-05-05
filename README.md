@@ -20,11 +20,13 @@ including:
 
 ## CI/CD Issues
 
-Since `gift` is the git pkg currently being used, the way a repository is cloned
-(in most cases, via a build server), can cause issues.
+When using more up to date `git` versions everything should just work.
 
-For the time being, until a better alternative is used or the bug is fixed upstream,
-you made need to run a git command prior to running vile-git.
+However, since `gift` is the git pkg currently being used, the way a repository is
+cloned might cause sporadic issues.
+
+For the time being, until a better alternative is used,
+you may need to run a git command prior to running vile-git.
 
 For example, on [Codeship](https://codeship.com), you would run:
 
@@ -36,7 +38,7 @@ If you are using [CircleCI](https://circleci.com), you can run:
 
 ## Analyzing Shallow Clones
 
-If you are having further issues, you can do this in `circle.yml`:
+If you are having further issues, notably with shallow clones, try this:
 
 ```yaml
   checkout:
