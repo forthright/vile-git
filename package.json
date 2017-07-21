@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "gift": "github:brentlintner/gift",
+    "gift": "^0.10.0",
     "lodash": "^4.17.4"
   },
   "peerDependencies": {
