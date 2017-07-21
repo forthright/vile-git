@@ -1,6 +1,6 @@
 {
   "name": "vile-git",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "Make use of Git based data including commit messages, author, and sha.",
   "main": "lib/index.js",
   "files": [
