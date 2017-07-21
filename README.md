@@ -1,18 +1,15 @@
 # vile-git
 
-A [vile](http://vile.io) plugin for [git](https://git-scm.com).
+A [Vile](http://vile.io) plugin for making use of [Git](https://git-scm.com) based data
+including commit messages, author, and sha.
 
 ## Features
 
-This plugin sends various git based analytics to [vile](http://vile.io),
-including:
-
-* Info on your HEAD commit.
+Creates a `vile.SCM` issue for the current HEAD commit.
 
 ## Requirements
 
-- [nodejs](http://nodejs.org)
-- [npm](http://npmjs.org)
+- [Node.js](http://nodejs.org)
 
 ## Installation
 
@@ -58,7 +55,7 @@ git:
 
 ## Versioning
 
-This project ascribes to [semantic versioning](http://semver.org).
+This project uses [Semver](http://semver.org).
 
 ## Licensing
 
@@ -85,15 +82,13 @@ Even if you are uncomfortable with code, an issue or question is welcome.
 
 ### Code Of Conduct
 
-This project ascribes to [contributor-covenant.org](http://contributor-covenant.org).
-
 By participating in this project you agree to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Maintainers
 
 - Brent Lintner - [@brentlintner](http://github.com/brentlintner)
 
-## Hacking
+## Developing
 
     cd vile-git
     npm install

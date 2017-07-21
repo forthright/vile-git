@@ -1,7 +1,7 @@
 {
   "name": "vile-git",
   "version": "0.5.3",
-  "description": "A vile plugin for git",
+  "description": "Make use of Git based data including commit messages, author, and sha.",
   "main": "lib/index.js",
   "files": [
     "lib",
